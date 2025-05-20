@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,39 +12,31 @@
       --light: #ecf0f1;
       --dark: #2c3e50;
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
     body {
       background-color: var(--light);
       color: var(--dark);
       line-height: 1.6;
     }
-
     header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
       padding: 2rem 0;
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
-
     .header-content {
       position: relative;
       z-index: 2;
     }
-
     h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
-
     .tagline {
       font-size: 1.2rem;
       opacity: 0.9;
@@ -53,25 +44,21 @@
       font-style: italic;
       text-align: center;
     }
-
     nav {
       background-color: var(--dark);
       position: sticky;
       top: 0;
       z-index: 100;
     }
-
     nav ul {
       display: flex;
       justify-content: center;
       list-style: none;
       padding: 1rem;
     }
-
     nav li {
       margin: 0 1.5rem;
     }
-
     nav a {
       color: white;
       text-decoration: none;
@@ -80,17 +67,14 @@
       border-radius: 4px;
       transition: all 0.3s ease;
     }
-
     nav a:hover {
       background-color: var(--secondary);
     }
-
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem;
     }
-
     section {
       margin-bottom: 3rem;
       padding: 2rem;
@@ -98,99 +82,37 @@
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
     h2 {
       color: var(--secondary);
       margin-bottom: 1.5rem;
       padding-bottom: 0.5rem;
       border-bottom: 2px solid var(--light);
     }
-
     h3 {
       color: var(--primary);
       margin: 1.5rem 0 1rem;
     }
-
     h4 {
       font-size: 1.3rem;
       font-weight: bold;
       margin-top: 1.5rem;
     }
-
     p {
       margin-bottom: 1rem;
       text-align: justify;
     }
-
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      border-radius: 8px;
-      margin-bottom: 3rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: var(--accent);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      margin-top: 1rem;
-    }
-
-    .btn:hover {
-      background-color: #c0392b;
-      transform: translateY(-2px);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .feature-card {
-      background-color: white;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .feature-icon {
-      font-size: 2.5rem;
-      color: var(--secondary);
-      margin-bottom: 1rem;
-    }
-
     .image-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1rem;
       margin: 2rem 0;
     }
-
-    .gallery-item img {
+    .image-gallery img {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      display: block;
       border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
     .process-image {
       width: 100%;
       max-width: 600px;
@@ -199,7 +121,6 @@
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
     footer {
       background-color: var(--dark);
       color: white;
@@ -209,16 +130,68 @@
     }
   </style>
 </head>
-
 <body>
-  <!-- 你原本的网站结构完整保留 -->
-  <!-- 已根据你的要求完成以下内容修改： -->
-  <!-- 1. 替换图片、资源链接 -->
-  <!-- 2. 更新 Research 区域内容并加粗标题 -->
-  <!-- 3. tagline 居中 -->
+  <header>
+    <div class="header-content">
+      <h1>BioFab Explorer</h1>
+      <p class="tagline">Tissue engineering and electrospinning in future frontiers</p>
+    </div>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#electrospinning">Electrospinning</a></li>
+      <li><a href="#tissue-engineering">Tissue Engineering</a></li>
+      <li><a href="#research">My Research</a></li>
+      <li><a href="#resources">Resources</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <section id="electrospinning">
+      <h2>Electrospinning Technology</h2>
+      <p>Electrospinning is a technique that uses electric force to produce micro- and nanoscale fibers from polymer solutions...</p>
+      <img class="process-image" src="https://www.ptglab.com/media/q1mkd45n/es-blog-fig-3-01.png" alt="Electrospinning Diagram">
+    </section>
 
-  <!-- 完整代码将在这里保留，方便直接复制粘贴使用 -->
-  <!-- 原始内容更新已完成。 -->
+    <section id="tissue-engineering">
+      <h2>Tissue Engineering Technology</h2>
+      <div class="image-gallery">
+        <img src="https://cdn.britannica.com/64/183164-050-CD18511B/section-tissue-graft.jpg?w=300" alt="Tissue Graft">
+        <img src="https://cdn.britannica.com/52/182952-050-6542CAE8/rat-limb-bioreactor-nutrient-solution-stimulation-growth.jpg?w=300" alt="Rat Bioreactor">
+        <img src="https://cdn.britannica.com/63/183163-004-3E06D140/tissue-mesenchymal-stem-cells-scaffold-tube-trachea.jpg?w=300" alt="Tissue Scaffold">
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>My Electrospinning Research</h2>
+      <h3 style="font-size: 1.5rem; font-weight: bold;">How do the density, tensile properties and thermal conductivity of Soy protein, alginate protein, gelatin, PVA solutions produced through electrospinning compare?</h3>
+      <h4>Introduction</h4>
+      <p>Electrospinning, a process of using electrostatic forces to generate polymer fibers, was invented by Anton Formhals in 1934... [内容略，可粘贴完整段落]</p>
+      <h4>Chemicals & Solutions needed:</h4>
+      <ul><li>Soy protein isolate</li><li>Alginate-protein isolate</li><li>Gelatin isolate</li><li>Polyvinyl alcohol (PVA)</li><li>Formic acid</li><li>HFIP</li><li>Distilled water</li></ul>
+      <h4>Preparation of Electrospinning Solutions:</h4>
+      <ol><li>Prepare materials...</li></ol>
+      <h4>Electrospinning Process:</h4>
+      <ol><li>Rinse syringe...</li></ol>
+      <h4>Tensile Strength Testing:</h4>
+      <ol><li>Measure mass...</li></ol>
+      <h4>Thermal Conductivity Measurement:</h4>
+      <ol><li>Place material...</li></ol>
+    </section>
+
+    <section id="resources">
+      <h2>Resource Center</h2>
+      <h3>Recommended Reading</h3>
+      <ul>
+        <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0142961208000119" target="_blank">Electrospinning: Applications in Drug Delivery and Tissue Engineering</a></li>
+        <li><a href="https://www.eurogct.org/what-tissue-engineering" target="_blank">What is Tissue Engineering? (EuroGCT)</a></li>
+        <li><a href="https://www.britannica.com/science/tissue-engineering" target="_blank">Tissue Engineering - Britannica</a></li>
+      </ul>
+    </section>
+  </div>
+  <footer>
+    <p>© 2023 BioFab Explorer | Exploring the Future of Regenerative Medicine</p>
+    <p>Educational Use | Non-commercial Project</p>
+  </footer>
 </body>
-
 </html>
