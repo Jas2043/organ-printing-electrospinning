@@ -1,197 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BioFab Explorer | Tissue Engineering and Electrospinning</title>
-  <style>
-    :root {
-      --primary: #2c3e50;
-      --secondary: #3498db;
-      --accent: #e74c3c;
-      --light: #ecf0f1;
-      --dark: #2c3e50;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 2rem 0;
-      text-align: center;
-    }
-    .header-content {
-      position: relative;
-      z-index: 2;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .tagline {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-      text-align: center;
-    }
-    nav {
-      background-color: var(--dark);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      padding: 1rem;
-    }
-    nav li {
-      margin: 0 1.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-    nav a:hover {
-      background-color: var(--secondary);
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    section {
-      margin-bottom: 3rem;
-      padding: 2rem;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    h2 {
-      color: var(--secondary);
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--light);
-    }
-    h3 {
-      color: var(--primary);
-      margin: 1.5rem 0 1rem;
-    }
-    h4 {
-      font-size: 1.3rem;
-      font-weight: bold;
-      margin-top: 1.5rem;
-    }
-    p {
-      margin-bottom: 1rem;
-      text-align: justify;
-    }
-    .image-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-    .image-gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .process-image {
-      width: 100%;
-      max-width: 600px;
-      margin: 1rem auto;
-      display: block;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    footer {
-      background-color: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioFab Explorer | Tissue Engineering and Electrospinning</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: var(--secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        h3 {
+            color: var(--primary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .process-image {
+            width: 100%;
+            max-width: 600px;
+            margin: 1rem auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .research-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1.5rem 0 1rem;
+            color: var(--primary);
+        }
+        
+        .research-subtitle {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 1.2rem 0 0.8rem;
+            color: var(--primary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="header-content">
-      <h1>BioFab Explorer</h1>
-      <p class="tagline">Tissue engineering and electrospinning in future frontiers</p>
+    <header>
+        <div class="header-content">
+            <h1>BioFab Explorer</h1>
+            <p class="tagline">Tissue engineering and electrospinning in future frontiers</p>
+            <a href="#electrospinning" class="btn">Learn About Electrospinning</a>
+            <a href="#tissue-engineering" class="btn">Explore Tissue Engineering</a>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#electrospinning">Electrospinning</a></li>
+            <li><a href="#tissue-engineering">Tissue Engineering</a></li>
+            <li><a href="#research">My Research</a></li>
+            <li><a href="#interactive">Interactive Learning</a></li>
+            <li><a href="#resources">Resource Center</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="home" class="hero">
+            <h2>Welcome to the Future of Regenerative Medicine</h2>
+            <p>Explore how electrospun nanomaterials and tissue engineering are revolutionizing medicine and organ transplantation</p>
+            <a href="#electrospinning" class="btn">Start Exploring</a>
+        </section>
+        
+        <section id="electrospinning">
+            <h2>Electrospinning Technology</h2>
+            <p>Electrospinning is a technique that uses electric force to produce micro- and nanoscale fibers from polymer solutions. These fibers have high surface-to-volume ratios and tunable porosity, making them ideal for tissue engineering, drug delivery, and other biomedical applications.</p>
+            
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/38AGKAm1kWg?start=187" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <h3>The Electrospinning Process</h3>
+            <img src="https://www.ptglab.com/media/q1mkd45n/es-blog-fig-3-01.png" alt="Electrospinning process diagram" class="process-image">
+            <p>The process of electrospinning, namely utilizing electrostatic forces to generate polymer fibers, traces its roots back to the process of electrospraying, in which solid polymer droplets are formed rather than fibers. In fact, a number of processing parameters must be optimized in order to generate fibers as opposed to droplets, and a typical electrospinning apparatus can be used to form fibers, droplets, or a beaded structure depending on the various processing parameters, such as distance between source and collector. In recent work, a greater understanding of processing parameters has led to the formation of fibers with diameters in the range of 100-500 nm, typically referred to as nanofibers. The development of nanofibers has led to resurgence in interest regarding the electrospinning process due to potential applications in filtration, protective clothing, and biological applications such as tissue engineering scaffolds, and drug delivery devices.</p>
+            
+            <p>A typical electrospinning setup consists of a capillary through which the liquid to be electrospun is forced; a high voltage source with positive or negative polarity, which injects charge into the liquid, and a grounded collector. A syringe pump, gravitational forces, or pressurized gas are typically used to force the liquid through a small-diameter capillary forming a pendant drop at the tip. An electrode from the high voltage source is then immersed in the liquid or can be directly attached to the capillary if a metal needle is used. The voltage source is then turned on and charge is injected into the polymer solution. Increasing the electric field strength causes the repulsive interactions between like charges in the liquid and the attractive forces between the oppositely charged liquid and collector to begin to exert tensile forces on the liquid, elongating the pendant drop at the tip of the capillary. As the electric field strength is increased further a point will be reached at which the electrostatic forces balance out the surface tension of the liquid leading to the development of the Taylor cone. If the applied voltage is increased beyond this point a fiber jet will be ejected from the apex of the cone and be accelerated toward the grounded collector.</p>
+            
+            <p>While the fiber jet is accelerated through the atmosphere toward the collector it undergoes a chaotic bending instability thereby increasing the transit time and the path length to the collector and aiding in the fiber thinning and solvent evaporation processes. Yarin et al. have suggested that this bending instability is due to repulsive interactions between like charges found in the polymer jet. Doshi and Reneker had hypothesized that charge density increases as the fiber jet thins, dramatically increasing radial charge repulsion which causes the fiber jet to split into a number of smaller fibers when a critical charge density is met. However, in more recent studies high-speed photography has been used to image the unstable zone of the fiber jet, revealing that a whipping instability causes the single fiber to bend and turn rapidly giving the impression that the fiber is splitting.</p>
+            
+            <p>The solid polymer fibers are then deposited onto a grounded collector. Depending on the application a number of collector configurations can be used, including a stationary plate, rotating mandrel, solvent (e.g. water), etc. Typically the use of a stationary collector will result in the formation of a randomly oriented fiber mat. A rotating collector can be used to generate mats with aligned fibers, with the rotation speed playing an important role in determining the degree of anisotropy. Additionally, Liu and Hsieh found that both the conductivity and the porosity of the collector play an important role in determining the packing density of the collected fibers. Electrospun cellulose acetate fibers were collected using copper mesh, aluminum foil, water, and paper. The authors found that non-conductive collectors yielded a more porous structure. They hypothesized that conductive collectors are able to dissipate the residual charge of the fibers, while non-conductive collectors lack this ability causing the collected fibers to repel each other, thus decreasing the packing density. Additionally the authors found that more porous collectors resulted in a lower fiber packing density. Furthermore, the geometry of the collector can be selected based on the application so as to form either a sheet or a tubular construct from the same electrospinning setup merely by changing the collector. For example, a 2-dimensional copper mesh can be used to form a sheet, while a cylindrical, rotating mandrel can be used to form a tubular scaffold. This ease of use and adaptability is one of the main reasons for electrospinning's renewed popularity.</p>
+            
+            <h3>Applications</h3>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🧬</div>
+                    <h3>Tissue Engineering Scaffolds</h3>
+                    <p>Electrospun fibers mimic the extracellular matrix structure, providing an ideal 3D environment for cell growth in vascular, bone, neural, and other tissue regeneration applications.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💊</div>
+                    <h3>Drug Delivery Systems</h3>
+                    <p>Drugs can be encapsulated in electrospun fibers for controlled release, improving therapeutic efficacy while reducing side effects.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🩺</div>
+                    <h3>Wound Dressings</h3>
+                    <p>Electrospun dressings offer high breathability and fluid absorption, promoting wound healing while preventing infection.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="tissue-engineering">
+            <h2>Tissue Engineering Technology</h2>
+            <p>Tissue engineering integrates biological components, such as cells and growth factors, with engineering principles and synthetic materials. Substitute tissues can be produced by first seeding human cells onto scaffolds, which may be made from collagen or from a biodegradable polymer. The scaffolds are then incubated in mediums containing growth factors, which stimulate the cells to grow and divide. As cells spread across the scaffold, the substitute tissue is formed. This tissue can be implanted into the human body, with the implanted scaffold eventually being either absorbed or dissolved.</p>
+            
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="https://cdn.britannica.com/64/183164-050-CD18511B/section-tissue-graft.jpg?w=300" alt="Tissue graft section">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.britannica.com/52/182952-050-6542CAE8/rat-limb-bioreactor-nutrient-solution-stimulation-growth.jpg?w=300" alt="Rat limb in bioreactor">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.britannica.com/63/183163-004-3E06D140/tissue-mesenchymal-stem-cells-scaffold-tube-trachea.jpg?w=300" alt="Stem cells on scaffold">
+                </div>
+            </div>
+            
+            <p>Examples of tissues that are candidates for tissue engineering include skin, cartilage, heart, and bone. The production of skin substitutes has played an important role in improving the success of skin graft surgeries, especially for complex wounds such as burns. Substitute tissues of the renal system, including urinary bladders and urethras, have also been engineered and transplanted successfully, thereby broadening therapeutic opportunities for complicated renal disorders. Scaffolds and bioartificial tissues are being investigated for their use in the development of functioning bioartificial limbs; the first such limb to be successfully developed—a rat leg with functioning muscles and veins—was reported in 2015.</p>
+            
+            <h3>Key Components</h3>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Scaffolds</h3>
+                    <p>3D structures that mimic the extracellular matrix, providing mechanical support and biochemical signals for cell growth and tissue formation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧫</div>
+                    <h3>Cells</h3>
+                    <p>Stem cells, primary cells, or cell lines are used depending on the application, with stem cells offering the greatest differentiation potential.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Growth Factors</h3>
+                    <p>Biochemical signals that direct cell differentiation and tissue development, crucial for creating functional tissues.</p>
+                </div>
+            </div>
+            
+            <h3>Current Challenges</h3>
+            <ul>
+                <li>Creating vascular networks for thick tissues</li>
+                <li>Ensuring long-term functionality of engineered tissues</li>
+                <li>Scaling up production for clinical applications</li>
+                <li>Reducing costs for widespread implementation</li>
+            </ul>
+        </section>
+        
+        <section id="research">
+            <h2>My Electrospinning Research</h2>
+            <p class="research-title">How do the density, tensile properties and thermal conductivity of Soy protein, alginate protein, gelatin, PVA solutions produced through electrospinning compare?</p>
+            
+            <p class="research-subtitle">Introduction</p>
+            <p>Electrospinning, a process of using electrostatic forces to generate polymer fibers, was invented by Anton Formhals in 1934. We can achieve a variety of materials through electrospinning production, including a variety of fibers mat, fiber film and even fiber tubes. Electrospun materials have a wide range of utilities, such as food storage, drug delivery and tissue engineering. A variety of drugs can be loaded into the fibers, enhance dissolution, and released at proper points. The material could also be used in artificial organs, such as artificial heart valves. With the flexibility in the produced materials, electrospun scaffolds have been used in different tissue applications including: vascular, bone, neural, and ligament. Choice of materials, fiber orientation, porosity, mechanical and thermal properties could provide valuable insights to making the application of these materials more feasible.</p>
+            <p>In this research, the tensile properties and thermal conductivity of electrospun fibers will be evaluated using a tensile test stand and thermal couples respectively. The result of this research will indicate which kind of material is the most similar to an actual heart valve, which could provide a new aspect of making artificial organs thus accelerating new discoveries.</p>
+            
+            <p class="research-subtitle">Chemicals & Solutions needed:</p>
+            <ul>
+                <li>Soy protein isolate</li>
+                <li>Alginate-protein isolate</li>
+                <li>Gelatin isolate</li>
+                <li>Polyvinyl alcohol (PVA)</li>
+                <li>Formic acid</li>
+                <li>HFIP (Hexafluoroisopropanol)</li>
+                <li>Distilled water</li>
+            </ul>
+            
+            <p class="research-subtitle">The Electrospinning Setup and testing set up:</p>
+            <ul>
+                <li>Syringe pump</li>
+                <li>High-voltage power supply of a maximum of 20V</li>
+                <li>Needle (22G-30G)</li>
+                <li>Aluminum foil or rotating drum collector</li>
+                <li>Characterization Equipment</li>
+                <li>Tensile testing machine</li>
+                <li>Thermal conductivity testing setup (thermocouples, alcohol burner)</li>
+            </ul>
+            
+            <p class="research-subtitle">Preparation of Electrospinning Solutions:</p>
+            <ol>
+                <li>Prepare Soy Protein, Alginate-Protein, Gelatin, and PVA isolates.</li>
+                <li>Mix 100 milligrams of each protein with 0.5 mL formic acid and 50 mg of hexadecyltrimethyl ammoniumbromide.</li>
+                <li>Stir the four new solutions with an ultrasonic mixer or by hand for about 3 minutes until they are fully incorporated.</li>
+            </ol>
+            
+            <p class="research-subtitle">Electrospinning Process:</p>
+            <ol>
+                <li>Rinse the syringe and put each solution into a syringe attached to a syringe pump.</li>
+                <li>Set up the electrospinning parameters with Voltage: 10–30 kV, Flow rate: 0.5mL/h, Needle-collector distance: 10–20 cm</li>
+                <li>Collect fibers on an aluminum foil or rotating drum collector with a rotate speed 2400 RPM, forming a tubular structure by electrospinning onto a rotating mandrel.</li>
+                <li>Make sure to allow fibers to dry under controlled temperature and humidity before further testing.</li>
+            </ol>
+            
+            <p class="research-subtitle">Tensile Strength Testing:</p>
+            <ol>
+                <li>Measure the mass of each fiber mats and tubes.</li>
+                <li>Fix sample tubes onto a tensile testing rig with clamps.</li>
+                <li>Apply a gradual uniaxial force until the sample breaks, and record the stress-strain curve and calculate the tensile strength (MPa).</li>
+            </ol>
+            
+            <p class="research-subtitle">Thermal Conductivity Measurement:</p>
+            <ol>
+                <li>Place the electrospun material on a flat surface.</li>
+                <li>Attach thermocouples at fixed points on the material.</li>
+                <li>Light an alcohol lamp at a distance as a heat source.</li>
+                <li>Measure the temperature change over time at different distances.</li>
+                <li>Calculate the thermal conductivity using Fourier's law.</li>
+            </ol>
+        </section>
+        
+        <section id="interactive">
+            <h2>Interactive Learning</h2>
+            <h3>Electrospinning Process Simulator</h3>
+            <p>Adjust these parameters to observe changes in fiber morphology:</p>
+            <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                <p><strong>Voltage</strong>: 10kV <input type="range" min="5" max="20" value="10"> 20kV</p>
+                <p><strong>Flow rate</strong>: 0.5ml/h <input type="range" min="0.1" max="2" step="0.1" value="0.5"> 2ml/h</p>
+                <p><strong>Collection distance</strong>: 10cm <input type="range" min="5" max="20" value="10"> 20cm</p>
+                <button style="padding: 0.5rem 1rem; background: var(--secondary); color: white; border: none; border-radius: 4px; margin-top: 1rem;">Start Simulation</button>
+            </div>
+            
+            <h3>Knowledge Quiz</h3>
+            <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                <p><strong>Question 1:</strong> What is the most distinctive feature of electrospun fibers?</p>
+                <input type="radio" name="q1" id="q1a"> <label for="q1a">High conductivity</label><br>
+                <input type="radio" name="q1" id="q1b"> <label for="q1b">High surface-to-volume ratio</label><br>
+                <input type="radio" name="q1" id="q1c"> <label for="q1c">High transparency</label><br>
+                <button style="padding: 0.5rem 1rem; background: var(--secondary); color: white; border: none; border-radius: 4px; margin-top: 1rem;">Submit Answer</button>
+            </div>
+        </section>
+        
+        <section id="resources">
+            <h2>Resource Center</h2>
+            <h3>Recommended Reading</h3>
+            <ul>
+                <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0142961208000119" style="color: var(--secondary);" target="_blank">"Electrospinning: Applications in drug delivery and tissue engineering" - Sill & von Recum (2008)</a></li>
+                <li><a href="https://www.eurogct.org/what-tissue-engineering" style="color: var(--secondary);" target="_blank">"What is Tissue Engineering?" - EuroGCT</a></li>
+                <li><a href="https://www.britannica.com/science/tissue-engineering" style="color: var(--secondary);" target="_blank">"Tissue Engineering" - Encyclopedia Britannica</a></li>
+            </ul>
+            
+            <h3>Leading Research Institutions</h3>
+            <ul>
+                <li>Wake Forest Institute for Regenerative Medicine</li>
+                <li>MIT Department of Biological Engineering</li>
+                <li>National Center for Nanoscience and Technology, China</li>
+            </ul>
+            
+            <h3>Career Paths</h3>
+            <p>Interested in this field? Consider these career options:</p>
+            <ul>
+                <li>Tissue Engineer</li>
+                <li>Biomaterials Scientist</li>
+                <li>Regenerative Medicine Researcher</li>
+                <li>Bioprinting Specialist</li>
+            </ul>
+        </section>
     </div>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#electrospinning">Electrospinning</a></li>
-      <li><a href="#tissue-engineering">Tissue Engineering</a></li>
-      <li><a href="#research">My Research</a></li>
-      <li><a href="#resources">Resources</a></li>
-    </ul>
-  </nav>
-  <div class="container">
-    <section id="electrospinning">
-      <h2>Electrospinning Technology</h2>
-      <p>Electrospinning is a technique that uses electric force to produce micro- and nanoscale fibers from polymer solutions...</p>
-      <img class="process-image" src="https://www.ptglab.com/media/q1mkd45n/es-blog-fig-3-01.png" alt="Electrospinning Diagram">
-    </section>
-
-    <section id="tissue-engineering">
-      <h2>Tissue Engineering Technology</h2>
-      <div class="image-gallery">
-        <img src="https://cdn.britannica.com/64/183164-050-CD18511B/section-tissue-graft.jpg?w=300" alt="Tissue Graft">
-        <img src="https://cdn.britannica.com/52/182952-050-6542CAE8/rat-limb-bioreactor-nutrient-solution-stimulation-growth.jpg?w=300" alt="Rat Bioreactor">
-        <img src="https://cdn.britannica.com/63/183163-004-3E06D140/tissue-mesenchymal-stem-cells-scaffold-tube-trachea.jpg?w=300" alt="Tissue Scaffold">
-      </div>
-    </section>
-
-    <section id="research">
-      <h2>My Electrospinning Research</h2>
-      <h3 style="font-size: 1.5rem; font-weight: bold;">How do the density, tensile properties and thermal conductivity of Soy protein, alginate protein, gelatin, PVA solutions produced through electrospinning compare?</h3>
-      <h4>Introduction</h4>
-      <p>Electrospinning, a process of using electrostatic forces to generate polymer fibers, was invented by Anton Formhals in 1934... [内容略，可粘贴完整段落]</p>
-      <h4>Chemicals & Solutions needed:</h4>
-      <ul><li>Soy protein isolate</li><li>Alginate-protein isolate</li><li>Gelatin isolate</li><li>Polyvinyl alcohol (PVA)</li><li>Formic acid</li><li>HFIP</li><li>Distilled water</li></ul>
-      <h4>Preparation of Electrospinning Solutions:</h4>
-      <ol><li>Prepare materials...</li></ol>
-      <h4>Electrospinning Process:</h4>
-      <ol><li>Rinse syringe...</li></ol>
-      <h4>Tensile Strength Testing:</h4>
-      <ol><li>Measure mass...</li></ol>
-      <h4>Thermal Conductivity Measurement:</h4>
-      <ol><li>Place material...</li></ol>
-    </section>
-
-    <section id="resources">
-      <h2>Resource Center</h2>
-      <h3>Recommended Reading</h3>
-      <ul>
-        <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0142961208000119" target="_blank">Electrospinning: Applications in Drug Delivery and Tissue Engineering</a></li>
-        <li><a href="https://www.eurogct.org/what-tissue-engineering" target="_blank">What is Tissue Engineering? (EuroGCT)</a></li>
-        <li><a href="https://www.britannica.com/science/tissue-engineering" target="_blank">Tissue Engineering - Britannica</a></li>
-      </ul>
-    </section>
-  </div>
-  <footer>
-    <p>© 2023 BioFab Explorer | Exploring the Future of Regenerative Medicine</p>
-    <p>Educational Use | Non-commercial Project</p>
-  </footer>
+    
+    <footer>
+        <p>© 2023 BioFab Explorer | Exploring the Future of Regenerative Medicine</p>
+        <p>Educational Use | Non-commercial Project</p>
+    </footer>
 </body>
 </html>
